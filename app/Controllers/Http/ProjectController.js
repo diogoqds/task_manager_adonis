@@ -19,11 +19,7 @@ class ProjectController {
    * @param {View} ctx.view
    */
   async index ({ request, response, auth }) {
-    const projects = await Project.
-                              query()
-                              .with('user')
-                              .where('user_id', auth.user.id)
-                              .fetch()
+    const projects = await Project.all()
     return projects
   }
 
