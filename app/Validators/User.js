@@ -1,4 +1,5 @@
 'use strict'
+const Antl = use('Antl')
 
 class User {
 
@@ -13,6 +14,10 @@ class User {
       email: 'required|email|unique:users',
       password: 'required|confirmed'
     }
+  }
+
+  get messages() {
+    return Antl.list('validation')
   }
 }
 
